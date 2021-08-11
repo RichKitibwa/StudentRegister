@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<div class="Content">
+    <h1 style="text-align: center"> Register student </h1>
+
+    {% for category, message in get_flashed_messages(with_categories = true) %}
+        <div class="alert alert-danger">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    <form action="{{request.path}}" method="POST">
+        <label for= "name"> Name </label> <br>
+        <input type = "text" name = "name" id="name" placeholder = "Name" /><br>
+
+         <label for = "course">Course</label><br>
+         <input type = "text" name = "course" id="course" placeholder = "course" /><br>
+
+         <label for = "college">College</label><br>
+         <textarea name = "college" id="college" placeholder = "college"></textarea><br>
+
+         <label for = "year">Year of study</label><br>
+         <input type = "text" name = "year" id="year" placeholder = "Year of study" /><br>
+
+         <input type = "submit" value = "Submit" />
+    </form>
+
+</div>
+{% endblock %}
